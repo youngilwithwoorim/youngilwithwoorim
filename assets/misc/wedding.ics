@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ical.marudot.com//iCal Event Maker
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Asia/Seoul
+LAST-MODIFIED:20201011T015911Z
+TZURL:http://tzurl.org/zoneinfo-outlook/Asia/Seoul
+X-LIC-LOCATION:Asia/Seoul
+BEGIN:STANDARD
+TZNAME:KST
+TZOFFSETFROM:+0900
+TZOFFSETTO:+0900
+DTSTART:19700101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20220111T130558Z
+UID:1641906329399-45244@ical.marudot.com
+DTSTART;TZID=Asia/Seoul:20220514T170000
+DTEND;TZID=Asia/Seoul:20220514T180000
+SUMMARY:영일❤️우림 결혼식
+URL:https://youngil.with.woori.im
+DESCRIPTION:찾아 오시는 길 : \n\n서울대학교 엔지니어하우스 이라운지\n서울특별시 관악구 관악로 1 서울대학교 관악캠퍼스 310동(엔지니어하우스)\n02-875-7761\n\n버스 안내\n지하철 2호선 낙성대역 4번 출구 → GS주유소 → [장블랑제리] 제과점 앞에서 마을버스 02번 승차 → 제2공학관 하차 → 하차 정거장 건너편 '엔지니어 하우스' 도보 40m 이동\n\n자가용 안내\n내비게이션 "이라운지 서울대점" 검색\n \n\n셔틀버스 안내 (노란색 미니버스 / 경기70 바7478)\n식전 : 지하철 2호선 낙성대역 7번출구에서 오후 4시 / 4시 40분 / 5시에 예식장으로 출발\n식후 : 예식장 앞에서 오후 6시 15분 / 6시 45분 / 7시 15분에 낙성대역으로 출발
+LOCATION:서울특별시 관악구 관악로1 서울대학교 엔지니어하우스 이라운지
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:영일❤️우림 결혼식
+TRIGGER:-P1W
+END:VALARM
+END:VEVENT
+END:VCALENDAR
