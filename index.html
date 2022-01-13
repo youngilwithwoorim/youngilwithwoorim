@@ -26,6 +26,8 @@
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=yg9vkaeww9"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.js" integrity="sha384-JqNLUzAxpw7zEu6rKS/TNPZ5ayCWPUY601zaig7cUEVfL+pBoLcDiIEkWHjl07Ot" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+    <script src="https://kit.fontawesome.com/4068152d1c.js" crossorigin="anonymous"></script>
 
 
     <title>영일&우림, 결혼식에 초대합니다.</title>
@@ -57,10 +59,10 @@
         <div class="col">
             <p class="lead">2022년 5월 14일 토요일 오후 5시</p>
             <p class="lead">서울대학교 엔지니어하우스 이라운지</p>
-            <div class="auto-jsCalendar clean-theme" data-date="14/05/2022" data-navigator="false" data-zero-fill="true" data-month-format="#월 14일"></div>
-            <p>
-                <a href="assets/misc/wedding.ics" class="btn btn-sm btn-secondary">캘린더에 추가하기</a>
-            </p>
+            <div class="auto-jsCalendar clean-theme mt-4 d-flex justify-content-center" data-date="14/05/2022" data-navigator="false" data-zero-fill="true" data-month-format="#월 14일"></div>
+            <div class="d-grid gap-2">
+                <a href="assets/misc/wedding.ics" class="btn btn-secondary">캘린더에 추가하기</a>
+            </div>
         </div>
     </div>
     <div class="row mt-5 mb-3" data-aos="fade-up">
@@ -68,38 +70,76 @@
             <h1 class="text-center">사진첩</h1>
         </div>
     </div>
-    <div class="row mt-5" data-aos="fade-up">
-        <div id="lightgallery">
-            <a href="assets/images/gallery/p--01.jpg" data-lg-size="731-1024" class="gallery-item mt-1">
-                <img class="img-responsive" alt="사진01" src="assets/images/gallery/t-p--01.jpg" />
-            </a>
-            <a href="assets/images/gallery/p--02.jpg" data-lg-size="731-1024" class="gallery-item mt-1">
-                <img class="img-responsive" alt="사진02" src="assets/images/gallery/t-p--02.jpg" />
-            </a>
-            <a href="assets/images/gallery/p--03.jpg" data-lg-size="682-1024" class="gallery-item mt-1">
-                <img class="img-responsive" alt="사진03" src="assets/images/gallery/t-p--03.jpg" />
-            </a>
-            <a href="assets/images/gallery/p--04.jpg" data-lg-size="682-1024" class="gallery-item mt-1">
-                <img class="img-responsive" alt="사진04" src="assets/images/gallery/t-p--01.jpg" />
-            </a>
-            <a href="assets/images/gallery/p--06.jpg" data-lg-size="682-1024" class="gallery-item mt-1">
-                <img class="img-responsive" alt="사진06" src="assets/images/gallery/t-p--06.jpg" />
-            </a>
-            <a href="assets/images/gallery/p--07.jpg" data-lg-size="682-1024" class="gallery-item mt-1">
-                <img class="img-responsive" alt="사진07" src="assets/images/gallery/t-p--07.jpg" />
-            </a>
-            <a href="assets/images/gallery/p--24.jpg" data-lg-size="682-1024" class="gallery-item">
-                <img class="img-responsive mt-1" alt="사진07" src="assets/images/gallery/t-p--24.jpg" />
+    <div class="row mt-5" data-aos="fade-up" id="lightgallery" data-masonry='{"percentPosition": true }'>
+        <div class="col-6 col-sm-6 col-lg-3 mb-3 item" data-src="assets/images/gallery/p--01.jpg" data-lg-size="731-1024">
+            <a href="assets/images/gallery/p--01.jpg" class="gallery-item mt-1">
+                <img class="img-fluid" alt="사진01" src="assets/images/gallery/t-p--01.jpg" />
             </a>
         </div>
+        <div class="col-6 col-sm-6 col-lg-3 mb-3" data-src="assets/images/gallery/p--02.jpg" data-lg-size="731-1024">
+            <a href="assets/images/gallery/p--02.jpg" class="gallery-item mt-1">
+                <img class="img-fluid" alt="사진02" src="assets/images/gallery/t-p--02.jpg" />
+            </a>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 mb-3" data-src="assets/images/gallery/p--26.jpg" data-lg-size="1024-682">
+            <a href="assets/images/gallery/p--26.jpg" class="gallery-item mt-1">
+                <img class="img-fluid" alt="사진26" src="assets/images/gallery/t-p--26.jpg" />
+            </a>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 mb-3" data-src="assets/images/gallery/p--03.jpg" data-lg-size="682-1024">
+            <a href="assets/images/gallery/p--03.jpg" class="gallery-item mt-1">
+                <img class="img-fluid" alt="사진03" src="assets/images/gallery/t-p--03.jpg" />
+            </a>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 mb-3" data-src="assets/images/gallery/p--04.jpg" data-lg-size="682-1024">
+            <a href="assets/images/gallery/p--04.jpg" class="gallery-item mt-1">
+                <img class="img-fluid" alt="사진04" src="assets/images/gallery/t-p--04.jpg" />
+            </a>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 mb-3" data-src="assets/images/gallery/p--25.jpg" data-lg-size="1024-682">
+            <a href="assets/images/gallery/p--25.jpg" class="gallery-item mt-1">
+                <img class="img-fluid" alt="사진25" src="assets/images/gallery/t-p--25.jpg" />
+            </a>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 mb-3" data-src="assets/images/gallery/p--20.jpg" data-lg-size="1024-682">
+            <a href="assets/images/gallery/p--20.jpg" class="gallery-item mt-1">
+                <img class="img-fluid" alt="사진20" src="assets/images/gallery/t-p--20.jpg" />
+            </a>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 mb-3" data-src="assets/images/gallery/p--08.jpg" data-lg-size="682-1024">
+            <a href="assets/images/gallery/p--08.jpg" class="gallery-item mt-1">
+                <img class="img-fluid" alt="사진08" src="assets/images/gallery/t-p--08.jpg" />
+            </a>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 mb-3" data-src="assets/images/gallery/p--09.jpg" data-lg-size="682-1024">
+            <a href="assets/images/gallery/p--09.jpg" class="gallery-item mt-1">
+                <img class="img-fluid" alt="사진09" src="assets/images/gallery/t-p--09.jpg" />
+            </a>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 mb-3" data-src="assets/images/gallery/p--18.jpg" data-lg-size="682-1024">
+            <a href="assets/images/gallery/p--18.jpg" class="gallery-item mt-1">
+                <img class="img-fluid" alt="사진18" src="assets/images/gallery/t-p--18.jpg" />
+            </a>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 mb-3" data-src="assets/images/gallery/p--15.jpg" data-lg-size="682-1024">
+            <a href="assets/images/gallery/p--15.jpg" class="gallery-item mt-1">
+                <img class="img-fluid" alt="사진14" src="assets/images/gallery/t-p--15.jpg" />
+            </a>
+        </div>
+        <div class="col-6 col-sm-6 col-lg-3 mb-3" data-src="assets/images/gallery/p--29.jpg" data-lg-size="1024-682">
+            <a href="assets/images/gallery/p--29.jpg" class="gallery-item mt-1">
+                <img class="img-fluid" alt="사진29" src="assets/images/gallery/t-p--29.jpg" />
+            </a>
+        </div>
+
     </div>
     <div class="row mt-5 mb-3" data-aos="fade-up">
         <div class="col">
-            <h1 class="text-center">위치 안내</h1>
+            <h1 class="text-center">오시는 길</h1>
         </div>
     </div>
     <div class="row" data-aos="fade-up">
-        <div class="col" style="height:400px;" id="map">
+        <div class="col" style="height:300px;" id="map">
         </div>
     </div>
     <div class="row" data-aos="fade-up">
@@ -129,7 +169,49 @@
             </p>
         </div>
     </div>
-    <div class="row mt-5" data-aos="fade-up">
+    <div class="row mt-5 mb-3" data-aos="fade-up">
+        <div class="col">
+            <h1 class="text-center">연락처 확인하기</h1>
+        </div>
+    </div>
+    <div class="row" data-aos="fade-up">
+        <div class="col-8 text-center"><p class="lead">신랑에게 연락하기</p></div>
+        <div class="col-4 text-center"><p class="lead"><i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-sms"></i></p></div>
+    </div>
+    <div class="row" data-aos="fade-up">
+        <div class="col-8 text-center"><p class="lead">신부에게 연락하기</p></div>
+        <div class="col-4 text-center"><p class="lead"><i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-sms"></i></p></div>
+    </div>
+    <div class="row" data-aos="fade-up">
+        <hr>
+        <div class="col-6 text-center">
+            <p>신랑측 혼주</p>
+            <p>
+                아버지 조창욱
+                <br>
+                <i class="fas fa-phone text-muted"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-sms"></i>
+            </p>
+            <p>
+                어머니 구계순
+                <br>
+                <i class="fas fa-phone text-muted"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-sms"></i>
+            </p>
+        </div>
+        <div class="col-6 text-center">
+            <p class="">신부측 혼주</p>
+            <p>
+                아버지 현원섭
+                <br>
+                <i class="fas fa-phone text-muted"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-sms"></i>
+            </p>
+            <p>
+                어머니 김연수
+                <br>
+                <i class="fas fa-phone text-muted"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-sms"></i>
+            </p>
+        </div>
+    </div>
+    <div class="row mt-5 mb-3" data-aos="fade-up">
         <div class="col">
             <h1 class="text-center">마음 전하기</h1>
             <p>당일 자리하시지 못하더라도, 축하의 마음을 전해주신다면 감사히 받도록 하겠습니다.</p>
@@ -140,7 +222,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        신랑 측 계좌 확인하기
+                        신랑 측 계좌 확인
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -156,7 +238,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        신부 측 계좌 확인하기
+                        신부 측 계좌 확인
                     </button>
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -175,8 +257,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script>
     AOS.init({
-        delay: 50, // values from 0 to 3000, with step 50ms
-        duration: 500
+        delay: 100, // values from 0 to 3000, with step 50ms
+        duration: 700
     });
 
 
