@@ -176,11 +176,11 @@
                 내비게이션 "이라운지 서울대점" 검색
                 <br>
                 <a href="tmap://search?name=%EC%9D%B4%EB%9D%BC%EC%9A%B4%EC%A7%80%EC%84%9C%EC%9A%B8%EB%8C%80%EC%A0%90" class="btn btn-sm btn-secondary">티맵 안내받기</a>
-                <a href="javascript:myKakaoNavi1()" class="btn btn-sm btn-secondary">카카오내비 안내받기</a>
+                <a href="javascript:startKakaoNavi()" class="btn btn-sm btn-secondary">카카오내비 안내받기</a>
             </p>
             <p>
                 <b>셔틀버스 안내</b>
-                <small>(노란색 미니버스 / 경기70 바7478)</small>
+                <small>(노란색 미니버스 / 경기70바7478)</small>
                 <br>
                 식전 : 지하철 2호선 낙성대역 7번출구에서 오후 4시 / 4시 40분 / 5시에 예식장으로 출발
                 <br>
@@ -195,11 +195,11 @@
     </div>
     <div class="row mb-3" data-aos="fade-up">
         <div class="col-8 text-center"><p class="lead">신랑에게 연락하기</p></div>
-        <div class="col-4 text-center"><p class="lead"><i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-sms"></i></p></div>
+        <div class="col-4 text-center"><p class="lead text-muted"><a href="tel:010-6303-5109" class="link-dark"><i class="fas fa-phone"></i></a>&nbsp;&nbsp;&nbsp;<a href="sms:010-6303-5109" class="link-dark"><i class="fas fa-sms"></i></a></p></div>
     </div>
     <div class="row" data-aos="fade-up">
         <div class="col-8 text-center"><p class="lead">신부에게 연락하기</p></div>
-        <div class="col-4 text-center"><p class="lead"><i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-sms"></i></p></div>
+        <div class="col-4 text-center"><p class="lead"><a href="tel:010-7229-5883" class="link-dark"><i class="fas fa-phone"></i></a>&nbsp;&nbsp;&nbsp;<a href="sms:010-7229-5883" class="link-dark"><i class="fas fa-sms"></i></a></p></div>
     </div>
     <div class="row" data-aos="fade-up">
         <div class="col-6 text-center">
@@ -207,12 +207,12 @@
             <p>
                 아버지 조창욱
                 <br>
-                <i class="fas fa-phone text-muted"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-sms"></i>
+                <a href="tel:010-4743-5109" class="link-dark"><i class="fas fa-phone text-muted"></i></a>&nbsp;&nbsp;&nbsp;<a href="sms:010-4743-5109" class="link-dark"><i class="fas fa-sms"></i></a>
             </p>
             <p>
                 어머니 구계순
                 <br>
-                <i class="fas fa-phone text-muted"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-sms"></i>
+                <a href="tel:010-5932-5109" class="link-dark"><i class="fas fa-phone text-muted"></i></a>&nbsp;&nbsp;&nbsp;<a href="sms:010-5932-5109" class="link-dark"><i class="fas fa-sms"></i></a>
             </p>
         </div>
         <div class="col-6 text-center">
@@ -220,12 +220,12 @@
             <p>
                 아버지 현원섭
                 <br>
-                <i class="fas fa-phone text-muted"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-sms"></i>
+                <a href="tel:010-7339-2883" class="link-dark"><i class="fas fa-phone text-muted"></i></a>&nbsp;&nbsp;&nbsp;<a href="sms:010-7339-2883" class="link-dark"><i class="fas fa-sms"></i></a>
             </p>
             <p>
                 어머니 김연수
                 <br>
-                <i class="fas fa-phone text-muted"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-sms"></i>
+                <a href="tel:010-4934-5883" class="link-dark"><i class="fas fa-phone text-muted"></i></a>&nbsp;&nbsp;&nbsp;<a href="sms:010-4934-5883" class="link-dark"><i class="fas fa-sms"></i></a>
             </p>
         </div>
     </div>
@@ -247,8 +247,8 @@
                     <div class="accordion-body">
                         <ul>
                             <li>신랑 본인 : 기업은행 01063035109 (예금주 : 조영일)</li>
-                            <li>신랑 아버지 계좌 : 기업은행 01063035109 (예금주 : 조창욱)</li>
-                            <li>신랑 어머니 계좌 : 기업은행 01063035109 (예금주 : 구계순)</li>
+                            <li>신랑 아버지 계좌 : 국민은행 645502-01-061746 (예금주 : 조창욱)</li>
+                            <li>신랑 어머니 계좌 : 국민은행 656525-96-102062 (예금주 : 구계순)</li>
                         </ul>
                     </div>
                 </div>
@@ -298,7 +298,7 @@
     });
 
     Kakao.init('63a8fff9f286f59087b78ccf58de90e2');
-    function myKakaoNavi1() {
+    function startKakaoNavi() {
         Kakao.Navi.start({
             name:"서울대학교 이라운지",
             x:126.950989,
@@ -306,15 +306,6 @@
             coordType:'wgs84'
         })
     }
-
-    document.addEventListener("DOMContentLoaded", function(){
-        lightGallery(document.getElementById('lightgallery'), {
-            plugins: [lgZoom, lgThumbnail],
-            licenseKey: "0000-0000-000-0000",
-            speed: 500,
-            thumbnail: true
-        });
-    });
 
     function getQueryStringObject() {
         var a = window.location.search.substr(1).split('&');
@@ -329,12 +320,26 @@
         }
         return b;
     }
+    
+    $(document).ready(function () {
+        lightGallery(document.getElementById('lightgallery'), {
+            plugins: [lgZoom, lgThumbnail],
+            licenseKey: "0000-0000-000-0000",
+            speed: 500,
+            thumbnail: true
+        });
 
-    var qs = getQueryStringObject();
+        var qs = getQueryStringObject();
 
-    if (qs.disp !== undefined) {
-        $(".bank_info").show();
-    }
+        if (qs.disp !== undefined) {
+            $(".bank_info").show();
+        }
+    })
+    
+
+    
+
+    
 
 
 </script>
