@@ -43,6 +43,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+    <script src="https://unpkg.com/tiny-typewriter@1.0.4/dist/tinyTypewriter.min.js"></script>
     <title>영일&우림, 결혼식에 초대합니다.</title>
     <style>
         .gallery-item {
@@ -68,7 +69,7 @@
 <div class="container-sm">
     <div class="row mt-5 mb-5">
         <div class="col">
-            <h1>조영일 and 현우림</h1>
+            <h1><span id="typewriter">조영일 and 현우림</span>의 결혼식</h1>
         </div>
     </div>
     <div class="row" data-aos="fade-up">
@@ -451,6 +452,23 @@
 
         sound.play();
     })
+
+    var typewritter = document.querySelector("#typewriter");
+    tinyTypewriter(typewritter, {
+        items: ['영일 and 우림', '우림', '영일',],
+        typeSpeed: 150,
+        deleteSpeed: 100,
+        delayBetweenItems: 2000,
+        loop: true,
+        startDelay: 50,
+        startsAtIndex: 0,
+        cursor: true,
+        cursorChar: ".",
+        cursorCharBlinkSpeed: 500,
+        cursorCharBlinkTransitionSpeed: 0.15,
+        startOnView: true,
+        startOnViewOffset: 0,
+    });
 
 
 
