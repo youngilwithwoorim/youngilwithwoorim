@@ -97,7 +97,7 @@
             <h1 class="text-center">사진첩</h1>
         </div>
     </div>
-    <div class="row mt-5" data-aos="fade-up" id="lightgallery" data-masonry='{"percentPosition": true }'>
+    <div class="row mt-5" data-aos="fade-up" id="lightgallery">
         <div class="col-6 col-sm-6 col-lg-3 mb-3 item" data-src="assets/images/gallery/p--01.jpg" data-lg-size="731-1024">
             <a href="assets/images/gallery/p--01.jpg" class="gallery-item mt-1">
                 <img class="img-fluid" alt="사진01" src="assets/images/gallery/t-p--01.jpg" />
@@ -451,26 +451,32 @@
         });
 
         sound.play();
+
+        var typewritter = document.querySelector("#typewriter");
+        tinyTypewriter(typewritter, {
+            items: ['영일 and 우림', '우림', '영일',],
+            typeSpeed: 150,
+            deleteSpeed: 100,
+            delayBetweenItems: 2000,
+            loop: true,
+            startDelay: 50,
+            startsAtIndex: 0,
+            cursor: true,
+            cursorChar: ".",
+            cursorCharBlinkSpeed: 500,
+            cursorCharBlinkTransitionSpeed: 0.15,
+            startOnView: true,
+            startOnViewOffset: 0,
+        });
+
+
+        setTimeout(function () {
+            var msnry = new Masonry( '#lightgallery', {
+                percentPosition: true
+            });
+            msnry.layout();
+        }, 1000);
     })
-
-    var typewritter = document.querySelector("#typewriter");
-    tinyTypewriter(typewritter, {
-        items: ['영일 and 우림', '우림', '영일',],
-        typeSpeed: 150,
-        deleteSpeed: 100,
-        delayBetweenItems: 2000,
-        loop: true,
-        startDelay: 50,
-        startsAtIndex: 0,
-        cursor: true,
-        cursorChar: ".",
-        cursorCharBlinkSpeed: 500,
-        cursorCharBlinkTransitionSpeed: 0.15,
-        startOnView: true,
-        startOnViewOffset: 0,
-    });
-
-
 
 </script>
 <script id="dsq-count-scr" src="//youngil-with-woorim.disqus.com/count.js" async></script>
