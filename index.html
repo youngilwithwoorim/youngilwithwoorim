@@ -194,26 +194,32 @@
         <div class="col">
             <p class="lead mt-3">서울대학교 엔지니어하우스 이라운지</p>
             <p>서울특별시 관악구 관악로 1 서울대학교 관악캠퍼스 310동(엔지니어하우스)<br><a href="tel:02-875-7761">02-875-7761</a></p>
-            <p>
+            <p class="mt-5">
                 <b>버스 안내</b>
                 <br>
-                지하철 2호선 낙성대역 4번 출구 → GS주유소 → [장블랑제리] 제과점 앞에서 마을버스 02번 승차 → 제2공학관 하차 → 하차 정거장 건너편 '엔지니어 하우스' 도보 40m 이동
+                <ol>
+                <li>[지하철 2호선 낙성대역] 4번 출구</li>
+                <li>[장블랑제리 제과점] 앞 마을버스02번 승차</li>
+                <li>[제2공학관] 정류장 하차</li>
+                <li>정거장 건너편 '엔지니어 하우스' 도보 40m 이동</li>
+                </ol>
             </p>
-            <p>
+            <p class="mt-5">
                 <b>자가용 안내</b>
-                <br>
-                내비게이션 "이라운지 서울대점" 검색
-                <br>
-                <a href="tmap://search?name=%EC%9D%B4%EB%9D%BC%EC%9A%B4%EC%A7%80%EC%84%9C%EC%9A%B8%EB%8C%80%EC%A0%90" class="btn btn-sm btn-secondary">티맵 안내받기</a>
-                <a href="javascript:startKakaoNavi()" class="btn btn-sm btn-secondary">카카오내비 안내받기</a>
+                <ul>
+                    <li>내비게이션 "이라운지 서울대점" 검색</li>
+                </ul>
+                <a href="tmap://search?name=%EC%9D%B4%EB%9D%BC%EC%9A%B4%EC%A7%80%EC%84%9C%EC%9A%B8%EB%8C%80%EC%A0%90" class="btn btn-sm btn-secondary">티맵 안내</a>
+                <a href="javascript:startKakaoNavi()" class="btn btn-sm btn-secondary">카카오내비 안내</a>
+                <a href="nmap://search?query=%EC%9D%B4%EB%9D%BC%EC%9A%B4%EC%A7%80%EC%84%9C%EC%9A%B8%EB%8C%80%EC%A0%90" class="btn btn-sm btn-secondary">네이버지도 안내</a>
             </p>
-            <p>
+            <p class="mt-5">
                 <b>셔틀버스 안내</b>
                 <small>(노란색 미니버스 / 경기70바7478)</small>
-                <br>
-                식전 : 지하철 2호선 낙성대역 7번출구에서 오후 4시 / 4시 40분 / 5시에 예식장으로 출발
-                <br>
-                식후 : 예식장 앞에서 오후 6시 15분 / 6시 45분 / 7시 15분에 낙성대역으로 출발
+                <ul>
+                    <li>식전 : 지하철 2호선 낙성대역 7번출구에서 오후 4시 / 4시 40분 / 5시에 <b>예식장으로 출발</b></li>
+                    <li>식후 : 예식장 앞에서 오후 6시 15분 / 6시 45분 / 7시 15분에 <b>낙성대역으로 출발</b></li>
+                </ul>
             </p>
         </div>
     </div>
@@ -261,7 +267,7 @@
     <div class="row mt-5 mb-3 bank_info" data-aos="fade-up" style="display: none;">
         <div class="col">
             <h1 class="text-center">마음 전하기</h1>
-            <p>당일 자리하시지 못하더라도, 축하의 마음을 전해주신다면 감사히 받도록 하겠습니다.</p>
+            <p class="text-center">당일 자리하시지 못하더라도, 축하의 마음을 전해주신다면 감사히 받도록 하겠습니다.</p>
         </div>
     </div>
     <div class="row mb-5 bank_info" data-aos="fade-up" style="display: none;">
@@ -335,7 +341,7 @@
     <div class="row mt-5 mb-3" data-aos="fade-up">
         <div class="col">
             <h1 class="text-center">축하 메세지 보내기</h1>
-            <p>신랑, 신부에게 축하의 메세지를 전해 주세요.</p>
+            <p class="text-center">신랑, 신부에게 축하의 메세지를 전해 주세요.</p>
         </div>
     </div>
     <div class="row mb-4 mt-2" data-aos="fade-up">
@@ -422,7 +428,12 @@
             plugins: [lgZoom, lgThumbnail],
             licenseKey: "0000-0000-000-0000",
             speed: 500,
-            thumbnail: true
+            thumbnail: true,
+            download: false,
+            mobileSettings: {
+                showCloseIcon: true,
+                download: false
+            }
         });
 
         var qs = getQueryStringObject();
