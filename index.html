@@ -35,6 +35,7 @@
     <script src="https://unpkg.com/lightgallery@2.3.0/plugins/zoom/lg-zoom.umd.js"></script>
     <script src="https://unpkg.com/lightgallery@2.3.0/plugins/thumbnail/lg-thumbnail.umd.js"></script>
     <script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.js" integrity="sha384-JqNLUzAxpw7zEu6rKS/TNPZ5ayCWPUY601zaig7cUEVfL+pBoLcDiIEkWHjl07Ot" crossorigin="anonymous"></script>
+    <script src="assets/js/jsCalendar.lang.ko.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
     <script src="https://kit.fontawesome.com/4068152d1c.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=yg9vkaeww9"></script>
@@ -54,6 +55,17 @@
         .jsCalendar-title-row {
             display: none;
         }
+
+        .jsCalendar tbody td.jsCalendar-current {
+            background-color: #6C757D !important;
+            border-radius: 20px !important;
+            color: #fff !important;
+            border-bottom: none !important;
+        }
+
+        .jsCalendar.clean-theme table {
+            font-family: inherit !important;
+        }
     </style>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J4DYEP8FS8"></script>
@@ -69,7 +81,7 @@
 <div class="container-sm">
     <div class="row mt-5 mb-5">
         <div class="col">
-            <h1><span id="typewriter">조영일 and 현우림</span>의 결혼식</h1>
+            <h1><span id="typewriter">영일 and 우림</span>의 결혼식</h1>
         </div>
     </div>
     <div class="row" data-aos="fade-up">
@@ -79,14 +91,23 @@
     </div>
     <div class="row mt-4" data-aos="fade-up">
         <div class="col">
-            <p class="lead">둘이서 함께 맞이하는 여덟 번째 봄,<br>따스한 봄날 처럼 서로 밝고 행복하게 살도록 노력하겠습니다. <br>저희의 앞날을 축복해주시면 항상 감사한 마음 간직하며 살겠습니다.</p>
+            <p class="text-center">둘이서 함께 맞이하는 여덟 번째 봄,<br>따스한 봄날 처럼<br>서로 밝고 행복하게 살도록 노력하겠습니다. <br>저희의 앞날을 축복해주시면 <br>항상 감사한 마음 간직하며 살겠습니다.</p>
+            <div style="display:flex;align-items:center;justify-content:center;" class="mt-5 mb-5">
+                <div style="text-align:right">
+                    <p>조창욱 · 구계순 <span style="font-size:12px">의 <span style="width:30px;display:inline-block;text-align:center">아들</span></span><span style="min-width:31px;display:inline-block;text-align:center;">영일</span></p>
+                    <p>현원섭 · 김연수 <span style="font-size:12px;">의 <span style="width:30px;display:inline-block;text-align:center">딸</span></span> <span style="min-width:31px;display:inline-block;text-align:center;">우림</span></p>
+                </div>
+            </div>
         </div>
+
     </div>
     <div class="row" data-aos="fade-up">
         <div class="col">
-            <p class="lead text-center">2022년 5월 14일 토요일 오후 5시</p>
-            <p class="text-center">서울대학교 엔지니어하우스 이라운지</p>
-            <div class="auto-jsCalendar clean-theme d-flex justify-content-center" data-date="14/05/2022" data-navigator="false" data-zero-fill="true" data-month-format=""></div>
+            <p class="text-center">
+                <b>2022년 5월 14일 토요일 오후 5시<br>
+                    서울대학교 엔지니어하우스 이라운지</b>
+            </p>
+            <div class="clean-theme d-flex justify-content-center" id="calendar"></div>
             <div class="d-grid gap-2">
                 <a href="assets/misc/wedding.ics" class="btn btn-secondary">캘린더에 추가하기</a>
             </div>
@@ -389,6 +410,14 @@
     }
     
     $(document).ready(function () {
+        var element = document.getElementById("calendar");
+        // Create the calendar
+        jsCalendar.new(element, "14/05/2022", {
+            language: "ko",
+            dayFormat: "D",
+        });
+
+
         lightGallery(document.getElementById('lightgallery'), {
             plugins: [lgZoom, lgThumbnail],
             licenseKey: "0000-0000-000-0000",
