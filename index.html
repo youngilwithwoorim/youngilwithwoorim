@@ -506,7 +506,7 @@
     function load_more_comment() {
         comment_page += 1;
         $.get("https://under100m.com/wedding/get/?api_key=woorimwithyoungilwedding&page=" + comment_page, function(data) {
-            if (data.success) {
+            if (data.status) {
                 $("#comment_list").append(data.html);
             } else {
                 toastr.options = {
@@ -642,7 +642,7 @@
                 "comment": $("#comment").val(),
                 "password": $("#password").val()
             }, function (data) {
-                if (data.result === "success") {
+                if (data.status) {
                     toastr.options = {
                         "closeButton": false,
                         "debug": false,
