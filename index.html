@@ -37,7 +37,7 @@
     <script src="https://unpkg.com/lightgallery@2.3.0/plugins/thumbnail/lg-thumbnail.umd.js"></script>
     <script src="https://unpkg.com/simple-jscalendar@1.4.3/source/jsCalendar.min.js" integrity="sha384-JqNLUzAxpw7zEu6rKS/TNPZ5ayCWPUY601zaig7cUEVfL+pBoLcDiIEkWHjl07Ot" crossorigin="anonymous"></script>
     <script src="assets/js/jsCalendar.lang.ko.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>-->
     <script src="https://kit.fontawesome.com/4068152d1c.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=yg9vkaeww9"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
@@ -625,15 +625,6 @@
             startOnView: true,
             startOnViewOffset: 0,
         });
-
-
-        setTimeout(function () {
-            var msnry = new Masonry( '#lightgallery', {
-                percentPosition: true
-            });
-            msnry.layout();
-        }, 1500);
-
 
         $("#comment_submit_btn").click(function () {
             $.post("https://under100m.com/wedding/create/", {
