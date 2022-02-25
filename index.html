@@ -641,8 +641,8 @@
                         "progressBar": true,
                         "positionClass": "toast-bottom-center",
                         "preventDuplicates": false,
-                        "showDuration": "300",
-                        "hideDuration": "1000",
+                        "showDuration": "200",
+                        "hideDuration": "700",
                         "timeOut": "5000",
                         "extendedTimeOut": "1000",
                         "showEasing": "swing",
@@ -650,7 +650,10 @@
                         "showMethod": "fadeIn",
                         "hideMethod": "fadeOut"
                     }
-                    toastr["success"]("메세지가 등록되었어요.", "완료!")
+                    toastr["success"]("메세지가 등록되었어요.", "완료!");
+                    $("#name").val("");
+                    $("#comment").val("");
+                    $("#password").val("");
                     get_comment();
                 } else {
                     toastr.options = {
