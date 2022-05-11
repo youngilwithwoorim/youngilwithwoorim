@@ -237,64 +237,7 @@
         return b;
     }
 
-    function get_comment() {
-        $.get("https://under100m.com/wedding/get/?api_key=woorimwithyoungilwedding", function(data) {
-            $("#comment_list").html(data.html);
-        });
-    }
-
-    var comment_page = 1;
-
-    function load_more_comment() {
-        comment_page += 1;
-        $.get("https://under100m.com/wedding/get/?api_key=woorimwithyoungilwedding&page=" + comment_page, function(data) {
-            if (data.status) {
-                $("#comment_list").append(data.html);
-            } else {
-                toastr.options = {
-                    "closeButton": false,
-                    "debug": false,
-                    "newestOnTop": false,
-                    "progressBar": true,
-                    "positionClass": "toast-bottom-center",
-                    "preventDuplicates": false,
-                    "showDuration": "300",
-                    "hideDuration": "1000",
-                    "timeOut": "5000",
-                    "extendedTimeOut": "1000",
-                    "showEasing": "swing",
-                    "hideEasing": "linear",
-                    "showMethod": "fadeIn",
-                    "hideMethod": "fadeOut"
-                }
-                toastr["info"](data.message, "마지막 페이지")
-                $("#comment_load_btn").hide();
-            }
-        });
-    }
-
     $(document).ready(function () {
-        get_comment();
-        // var element = document.getElementById("calendar");
-        // // Create the calendar
-        // jsCalendar.new(element, "14/05/2022", {
-        //     language: "ko",
-        //     dayFormat: "D",
-        // });
-
-
-        lightGallery(document.getElementById('lightgallery'), {
-            plugins: [lgZoom, lgThumbnail],
-            licenseKey: "0000-0000-000-0000",
-            speed: 500,
-            thumbnail: true,
-            download: false,
-            mobileSettings: {
-                showCloseIcon: true,
-                download: false
-            }
-        });
-
         var qs = getQueryStringObject();
 
         if (qs.u !== undefined) {
@@ -316,59 +259,6 @@
             cursorCharBlinkTransitionSpeed: 0.15,
             startOnView: true,
             startOnViewOffset: 0,
-        });
-
-        $("#comment_submit_btn").click(function () {
-            $.post("https://under100m.com/wedding/create/", {
-                "api_key": "woorimwithyoungilwedding",
-                "name": $("#name").val(),
-                "comment": $("#comment").val(),
-                "password": $("#password").val()
-            }, function (data) {
-                if (data.status) {
-                    toastr.options = {
-                        "closeButton": false,
-                        "debug": false,
-                        "newestOnTop": false,
-                        "progressBar": true,
-                        "positionClass": "toast-bottom-center",
-                        "preventDuplicates": false,
-                        "showDuration": "200",
-                        "hideDuration": "700",
-                        "timeOut": "5000",
-                        "extendedTimeOut": "1000",
-                        "showEasing": "swing",
-                        "hideEasing": "linear",
-                        "showMethod": "fadeIn",
-                        "hideMethod": "fadeOut"
-                    }
-                    toastr["success"]("메세지가 등록되었어요.", "완료!");
-                    $("#name").val("");
-                    $("#comment").val("");
-                    $("#password").val("");
-                    get_comment();
-                } else {
-                    toastr.options = {
-                        "closeButton": false,
-                        "debug": false,
-                        "newestOnTop": false,
-                        "progressBar": true,
-                        "positionClass": "toast-bottom-center",
-                        "preventDuplicates": false,
-                        "showDuration": "300",
-                        "hideDuration": "1000",
-                        "timeOut": "5000",
-                        "extendedTimeOut": "1000",
-                        "showEasing": "swing",
-                        "hideEasing": "linear",
-                        "showMethod": "fadeIn",
-                        "hideMethod": "fadeOut"
-                    }
-                    toastr["info"](data.message, "실패!")
-                }
-
-            })
-
         });
     })
 
